@@ -39,6 +39,7 @@ export class ProductsService {
         return this.categories;
     }
     getPros(){
+        this.allproducts = [];
         for(let x in this.products){
             for(let y in this.products[x]){
                 // console.log(this.products[x][y]);
