@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ProductsService } from 'src/app/products.service';
 
 @Component({
@@ -13,6 +13,11 @@ export class SingleComponent implements OnInit {
 
   ngOnInit() {
     this.category = this.routeData.snapshot.params['cat'];
+    this.routeData.params.subscribe(
+      (p: Params) => {
+        this.category = p['cat'];
+      }
+    )
     // console.log(this.routeData.snapshot.params['cat']);
   }
   getMycategories(){
