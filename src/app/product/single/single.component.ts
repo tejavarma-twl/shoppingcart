@@ -9,15 +9,25 @@ import { ProductsService } from 'src/app/products.service';
 })
 export class SingleComponent implements OnInit {
   category = "";
+  colour = "";
+  size = "";
   constructor(private routeData: ActivatedRoute, private serv: ProductsService) { }
 
   ngOnInit() {
     this.category = this.routeData.snapshot.params['cat'];
+    this.colour = this.routeData.snapshot.queryParams['colour'];
+    this.size = this.routeData.snapshot.queryParams['size'];
     this.routeData.params.subscribe(
       (p: Params) => {
         this.category = p['cat'];
       }
     )
+    this.routeData.queryParams.subscribe(
+      (q: Params) => {
+        this.colour = q['colour'];
+        this.size = q['size'];
+      }
+    );
     // console.log(this.routeData.snapshot.params['cat']);
   }
   getMycategories(){

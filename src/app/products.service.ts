@@ -4,10 +4,10 @@ export class ProductsService {
     imgsrc = "https://www.gr8bunch.com/wp-content/uploads/2018/11/dummy-product-600x400.png";
 
     categories = [
-        {cat_id:"c1",cat_name:"Watches"},
-        {cat_id:"c2",cat_name:"Shoes"},
-        {cat_id:"c3",cat_name:"Perfumes"},
-        {cat_id:"c4",cat_name:"Mobiles"},
+        {cat_id:"c1",cat_name:"Watches",cat_colour:"blue"},
+        {cat_id:"c2",cat_name:"Shoes",cat_colour:"black"},
+        {cat_id:"c3",cat_name:"Perfumes",cat_colour:"white"},
+        {cat_id:"c4",cat_name:"Mobiles",cat_colour:"green"},
     ]
     // products = [
     //     {id:123,name:"Ferrari",price:6500,brand:"Ferrari",category:"c3",image:this.imgsrc},
