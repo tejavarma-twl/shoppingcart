@@ -4,11 +4,13 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductComponent } from './product/product.component';
 import { SingleComponent } from './product/single/single.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {path:'products',component:ProductComponent},
   {path:'products/:cat',component:SingleComponent},
   {path:'cart',component:CartComponent},
+  {path:'signup',component:SignupComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'}
   // { path: '**', component: PageNotFoundComponent }
 ];
