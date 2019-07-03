@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="addproduct" (ngSubmit)="getData()">
+    <div formGroupName="primary">
+      <div class="form-group">
+        <label for="exampleInputEmail1">name</label>
+        <input formControlName="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name" value="">
+        <!-- <small *ngIf="register.primary.get('email').invalid&&register.primary.get('email').touched" id="emailHelp" class="form-text text-muted">Email should be filled</small> -->
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">price</label>
+        <input formControlName="price" type="text" class="form-control" id="exampleInputPassword1" placeholder="Price">
+        <!-- <small *ngIf="register.primary.get('password').invalid&&register.primary.get('password').touched" id="emailHelp" class="form-text text-muted">Password should be filled</small> -->
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="ml-5 btn btn-primary" (click)="showProducts()">Get Products</button>
+  </form>
+</div>
+<div>
+  <h2>Get products</h2>
+  <ul>
+    <li *ngFor="let pro of productsList">
+      {{pro.name}}<br>{{pro.price}}
+    </li>
+  </ul>
+</div>
