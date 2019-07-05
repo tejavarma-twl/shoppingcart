@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService {
     imgsrc      = "https://www.gr8bunch.com/wp-content/uploads/2018/11/dummy-product-600x400.png";
     dataBaseUrl = "https://test-project-9cbbd.firebaseio.com/";
+    signupurl = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBNWK7kdy-NeRlz_-tNNyuBXUyxCyzDe7o";
+    signinUrl = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBNWK7kdy-NeRlz_-tNNyuBXUyxCyzDe7o";
+
     categories  = [
         {cat_id:"c1",cat_name:"Watches",cat_colour:"blue"},
         {cat_id:"c2",cat_name:"Shoes",cat_colour:"black"},
@@ -57,6 +60,32 @@ export class ProductsService {
 
     getMyproducts(){
         return this.http.get(this.dataBaseUrl+'products.json');
+    }
+
+    signUp(){
+        this.http.post(this.signupurl,
+            {
+                email:'kvarma063@gmail.com',
+                password:'testing123',
+                returnSecureToken:true
+            }).subscribe(
+                res => {
+                    console.log(res);
+                }
+            )
+    }
+
+    signIn(){
+        this.http.post(this.signinUrl,
+            {
+                email:'kvarma063@gmail.om',
+                password:'testing123',
+                returnSecureToken:true
+            }).subscribe(
+                res => {
+                    console.log(res);
+                }
+            )
     }
     
 }

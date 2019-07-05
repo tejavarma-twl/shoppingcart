@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './products.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ProductsService } from './products.service';
   styleUrls: ['./app.component.scss'],
   providers:[ProductsService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'shopping';
   cart = {};
   cartkeys = [];
@@ -17,7 +17,9 @@ export class AppComponent {
     return this.product.getCats();
   }
   
-  
-
+  ngOnInit(){
+    // this.product.signUp();
+    this.product.signIn();
+  }
 
 }
